@@ -22,7 +22,6 @@ const CollectionById = ({id}) => {
         console.log("translated ",translatedData , router.locale)
         const modifiedData = [];
         for(let item in translatedData){
-          const img = [];
           modifiedData.push({ ...translatedData[item],image : res.data[item].image })
         }
         setProductData([...modifiedData]);

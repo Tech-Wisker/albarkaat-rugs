@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
 
   useEffect(()=>{
     const language = JSON.parse(localStorage.getItem("language") || "null");
-    i18n.changeLanguage(language.code || "en")
+    i18n.changeLanguage(language?.code || "en")
   },[])
   return <>
    <I18nextProvider i18n={i18n}>
