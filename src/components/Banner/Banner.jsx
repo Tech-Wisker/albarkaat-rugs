@@ -67,6 +67,7 @@ const Banner = () => {
                  width= "60vw" 
                  maxWidth= "100%"
                  color={"white"}
+                 
                 >
                 <InputGroup
                  w={"100%"}
@@ -96,7 +97,7 @@ const Banner = () => {
              </InputGroup>
              {(debData.length > 0 && blur) && <Box
               border={"2px solid"}
-              borderRadius={"0px 0px 20px 20px"}
+              borderRadius={"0px 0px 8px 8px"}
               style={{
                 borderTopColor: "transparent",
               }}
@@ -106,14 +107,29 @@ const Banner = () => {
               px={"3px"}
               w={"100%"}>
                {
-                debData.map((e)=>{ 
-                    return <Box w={"100%"} _hover={{color : "blue.300"}}><Text>{e.title}</Text><hr/></Box>
+                debData.map((e,i)=>{ 
+                    return <Box w={"100%"} _hover={{color : "blue.300"}}>{i===0 ? "" : <hr/>}<Text>{e.title}</Text></Box>
                 })
                }
              </Box>}
              </Box>
             </Box>
-            <Image zIndex={9} src={"/images/background/home.jpg"} transition="filter 0.5s ease" style={{ filter: (blur ? "blur(8px)" : "blur(0px)") }} width={"100%"} height={"100%"}/>
+            <Box 
+            zIndex={9}
+            pos={"absolute"}
+            left={0}
+            right={0}
+            top={0}
+            bottom={0}
+            transition="filter 0.5s ease"
+            style={{ filter: (blur ? "blur(12px)" : "blur(0px)") }}
+            backgroundImage={"/images/background/home2.jpg"}
+            backgroundRepeat={"no-repeat"}
+            backgroundSize={"cover"}
+            backgroundPosition={"bottom center"}
+            >
+
+            </Box>
         </Box>
     );
 }
