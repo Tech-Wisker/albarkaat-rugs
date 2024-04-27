@@ -1,4 +1,5 @@
 import { Box, Button,Flex,Menu, MenuButton, MenuItem, MenuList, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
+import { t } from 'i18next';
 import Link from 'next/link';
 import React, { useRef } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,20 +10,24 @@ function MenuData ({style,home}){
 //    menu item in list
     const menuItems = [
         {
-            title : "Types",
+            title : t("types.title"),
             path : "/types"
         },
         {
-            title : "Products",
+            title : t("collections.title"),
+            path : "/collections"
+        },
+        {
+            title : t("products.title"),
             path : "/products"
         },
         {
-            title : "Contact",
+            title : t("contact.title"),
             path : "/contact"
         },
         {
-            title : "Login",
-            path : "/login"
+            title : t("aboutus.title"),
+            path : "/aboutus"
         }
     ]
 

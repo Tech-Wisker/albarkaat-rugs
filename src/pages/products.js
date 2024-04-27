@@ -1,11 +1,13 @@
 "use client"
 import ProductCard from '@/components/Cards/ProductCard';
 import Translate from '@/components/Common/Translate';
-import { Box, Center, Grid, GridItem, Heading, Skeleton, Text } from '@chakra-ui/react';
+import { Box, Center, Grid, GridItem, Skeleton, Text } from '@chakra-ui/react';
+import Heading from '@/components/Heading';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const Products = () => {
     const router = useRouter();
@@ -47,16 +49,18 @@ const Products = () => {
    
     useEffect(() => {
           fetchProductData();
-    }, [])
+    }, [search])
     if(loading){
         return <Skeleton>
 
         </Skeleton>
     }
     return (<>
-     <Heading textAlign={"center"} mt={"100px"}>{search ? "Search Results for : " +search : "All Products"}</Heading>
+    <Box mt={"100px"}>
+    </Box>
+     <Heading>{search ? t("product.heading2") +search : t("product.heading1")}</Heading>
      {
-        (productData.length === 0) ? <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>No products found</Box> :
+        (productData.length === 0) ? <Box h={"70vh"} display={"flex"} alignItems={"center"} justifyContent={"center"}>{t("product.notfound")}</Box> :
         <Grid 
      mt={"50px"}
      p={"50px"}

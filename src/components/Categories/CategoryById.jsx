@@ -1,11 +1,13 @@
 "use client"
 import Translate from '@/components/Common/Translate';
-import { Box, Center, Grid, GridItem, Heading, Skeleton, Text } from '@chakra-ui/react';
+import { Box, Center, Grid, GridItem, Skeleton, Text } from '@chakra-ui/react';
+import Heading from '../Heading';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../Cards/ProductCard';
 import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const CategoryById = ({id}) => {
     const router = useRouter();
@@ -63,6 +65,7 @@ const CategoryById = ({id}) => {
 
         </Skeleton>
     }
+   
     return (<>
     <Box
     w={"100%"}
@@ -104,8 +107,7 @@ const CategoryById = ({id}) => {
         })
       }
      </Grid>
-    </>
-    );
+    </>)
 }
 
 export default CategoryById;

@@ -27,7 +27,7 @@ const CategoryCard = ({_id,img,description,title}) => {
             objectFit={"cover"} 
             backgroundSize={"cover"} 
             backgroundImage={image}  
-            objectPosition={"center bottom"}
+            backgroundPosition={"center bottom"}
             w={"100%"}
             height={"100%"}
             overflow={"hidden"}

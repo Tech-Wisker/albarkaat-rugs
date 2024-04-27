@@ -43,7 +43,7 @@ const ProductCard = ({_id,img,description,title}) => {
                 <Text noOfLines={{lg : 5 , md : 5 , sm : 3 , base : 3}} textTransform={"capitalize"}>{description}</Text>
                 <Button
                 onClick={()=>{
-                    router.push(`/product?id=${_id}`)
+                    router.push(`/product/${_id}`)
                 }}
                 >{"Details"}</Button>
             </Box>}

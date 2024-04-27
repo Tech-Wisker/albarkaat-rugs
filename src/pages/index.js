@@ -1,10 +1,11 @@
 import Head from "next/head";
-import { Box, Center, Heading } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import Banner from "@/components/Banner/Banner";
 import Category from "@/components/Categories/Category";
 import Collections from "@/components/Collections/Collections";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import Heading from "@/components/Heading";
 
 export default function Home() {
   const {locale} = useRouter();

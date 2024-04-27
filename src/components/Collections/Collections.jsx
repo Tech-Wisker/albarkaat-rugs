@@ -27,7 +27,7 @@ const Collections = () => {
     }, [])
     if(categories.length === 0 && loading){
         return <Skeleton>
-
+          <Box w={"100%"} h={"100vh"}></Box>
         </Skeleton>
     }
     return (<>

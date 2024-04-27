@@ -5,8 +5,7 @@ import LanguageSwitch from "@/components/Language/LanguageSwitch";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import i18n from "../i18/i18n";
 import { useEffect } from "react";
-
-
+import Footer from "@/components/Footer/Footer";
 
 
 function App({ Component, pageProps }) {
@@ -22,6 +21,7 @@ function App({ Component, pageProps }) {
     <Navbar/>
     <Box width={"100%"} overflow={"hidden"}>
   <Component {...pageProps} />
+  <Footer/>
     </Box>
     <LanguageSwitch/>
   </ChakraProvider>
