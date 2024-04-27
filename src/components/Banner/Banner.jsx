@@ -108,7 +108,7 @@ const Banner = () => {
               w={"100%"}>
                {
                 debData.map((e,i)=>{ 
-                    return <Box w={"100%"} _hover={{color : "blue.300"}}>{i===0 ? "" : <hr/>}<Text>{e.title}</Text></Box>
+                    return <Box onClick={()=>{router.push(`/product/${e._id}`)}} w={"100%"} _hover={{color : "blue.300"}}>{i===0 ? "" : <hr/>}<Text>{e.title}</Text></Box>
                 })
                }
              </Box>}
