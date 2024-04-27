@@ -95,7 +95,7 @@ const Banner = () => {
              {loading ? <Spinner h={"16px"} w={"16px"}/> : <IoSearch/>}
              </InputRightAddon>
              </InputGroup>
-             {(debData.length > 0 && blur) && <Box
+             {(debData.length > 0) && <Box
               border={"2px solid"}
               borderRadius={"0px 0px 8px 8px"}
               style={{
