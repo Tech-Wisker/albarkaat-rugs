@@ -62,7 +62,7 @@ const CategoryById = ({id}) => {
     console.log("IDDATA",data);
     if(loading){
         return <Skeleton>
-
+         <Box h={"70vh"} width={"100%"}></Box>
         </Skeleton>
     }
    

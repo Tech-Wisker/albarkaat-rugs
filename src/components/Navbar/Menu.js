@@ -40,14 +40,14 @@ function MenuData ({style,home}){
   </MenuButton>
   <MenuList color={"black"}>
     {
-        menuItems.map((e)=><MenuItem><Link href={e.path}>{e.title}</Link></MenuItem>)
+        menuItems.map((e,i)=><MenuItem key={"ssdx"+i}><Link href={e.path}>{e.title}</Link></MenuItem>)
     }
   </MenuList>
 </Menu>
       </>
     }else {
       return <Flex gap={"15px"} h={"100%"} alignItems={"center"}>
-       {menuItems.map((e)=><Link href={e.path}>{e.title}</Link>)}
+       {menuItems.map((e)=><Link key={"dx"+i} href={e.path}>{e.title}</Link>)}
       </Flex>
     }
 

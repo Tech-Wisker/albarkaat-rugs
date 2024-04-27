@@ -62,12 +62,8 @@ const CollectionById = ({id}) => {
     console.log("IDDATA",data);
     if(loading){
         return <Skeleton>
-
+           <Box h={"70vh"} width={"100%"}></Box>
         </Skeleton>
-    }
-
-    if(!data?.id){
-      return <Box h={"70vh"} display={"flex"} alignItems={"center"} justifyContent={"center"}>{t("collection.notfound")}</Box>
     }
 
     return (<>
