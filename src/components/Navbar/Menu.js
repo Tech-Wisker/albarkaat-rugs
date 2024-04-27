@@ -47,7 +47,7 @@ function MenuData ({style,home}){
       </>
     }else {
       return <Flex gap={"15px"} h={"100%"} alignItems={"center"}>
-       {menuItems.map((e)=><Link key={"dx"+i} href={e.path}>{e.title}</Link>)}
+       {menuItems.map((e,i)=><Link key={"dx"+i} href={e.path}>{e.title}</Link>)}
       </Flex>
     }
 
