@@ -1,15 +1,16 @@
-import { Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import Collections from './Collections';
 import { useTranslation } from 'react-i18next';
+import Breadcrumbs from '../Heading';
 
 const CollectionHome = () => {
     const {t} = useTranslation();
     return (<>
-        <Heading textAlign={"center"} mt="100px">{t("collections.heading")}</Heading>
+        <Box mt="100px" />
+        <Breadcrumbs crumbs={[{ label: t('collections.heading') }]} />
         <Collections/>
-           </>
-    );
+    </>);
 }
 
 export default CollectionHome;

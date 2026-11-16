@@ -38,14 +38,14 @@ function Inquiry({ productcode, title }) {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://ig.me/m/rugs_mart_/"
+                href="https://ig.me/m/abt_overseas/"
               >
                 <AiFillInstagram className="hover_icon" size="40px" />
               </a>
               <a
                 target="_blank"
                 rel="noreferrer"
-                href={`mailto:mytraders.rugs@gmail.com?subject=Info%20About%20@${productcode}`}
+                href={`mailto:albarkaatoverseas@gmail.com?subject=Info%20About%20@${productcode}`}
               >
                 <AiFillMail className="hover_icon" size="40px" />
               </a>

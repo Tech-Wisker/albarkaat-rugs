@@ -1,8 +1,11 @@
 "use client"
 import ProductCard from '@/components/Cards/ProductCard';
 import Translate from '@/components/Common/Translate';
-import { Box, Center, Grid, GridItem, Skeleton, Text } from '@chakra-ui/react';
-import Heading from '@/components/Heading';
+import { Box, Grid, Skeleton, SkeletonText } from '@chakra-ui/react';
+
+const SkeletonBox = Skeleton;
+import Breadcrumbs from '@/components/Heading';
+import Head from 'next/head';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -51,14 +54,35 @@ const Products = () => {
           fetchProductData();
     }, [search])
     if(loading){
-        return <Skeleton>
-
-        </Skeleton>
+        return (
+            <>
+            <Box mt="100px" />
+            <Box px={{ base: "20px", md: "50px" }} py={3}>
+                <Skeleton h="16px" w="200px" borderRadius="full" />
+            </Box>
+            <Grid mt="50px" p="50px" w="100%" templateColumns={{lg:'repeat(4,1fr)',md:'repeat(3,1fr)',sm:'repeat(2,1fr)',base:'repeat(1,1fr)'}} gap={6}>
+                {Array(8).fill('').map((_,i) => (
+                    <Box key={i}>
+                        <SkeletonBox h="220px" borderRadius="12px" mb={3}/>
+                        <Skeleton h="16px" w="80%" mb={2}/>
+                        <Skeleton h="12px" w="50%"/>
+                    </Box>
+                ))}
+            </Grid>
+            </>
+        )
     }
     return (<>
-    <Box mt={"100px"}>
-    </Box>
-     <Heading>{search ? t("product.heading2") +search : t("product.heading1")}</Heading>
+    <Head>
+      <title>{search ? `Search: ${search}` : 'All Products'} | Albarkaat Overseas</title>
+      <meta name="description" content={search ? `Search results for "${search}" — handmade rugs and carpets at Albarkaat Overseas.` : 'Browse all handmade rugs and carpets available at Albarkaat Overseas. Quality craftsmanship, worldwide delivery.'} />
+      <meta property="og:title" content={search ? `Search: ${search} | Albarkaat Overseas` : 'All Products | Albarkaat Overseas'} />
+    </Head>
+    <Box mt={"100px"} />
+    <Breadcrumbs crumbs={search
+      ? [{ label: 'Products', href: '/products' }, { label: `"${search}"` }]
+      : [{ label: 'Products' }]
+    } />
      {
         (productData.length === 0) ? <Box h={"70vh"} display={"flex"} alignItems={"center"} justifyContent={"center"}>{t("product.notfound")}</Box> :
         <Grid 

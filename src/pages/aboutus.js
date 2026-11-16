@@ -4,11 +4,14 @@ import {
   Container,
   Text,
   Heading,
+  Grid,
+  GridItem,
   Flex,
   Icon,
   Link,
   Center,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import ServiceCard from "../components/Aboutus/ServiceCard";
 import ContactForm from "../components/Contact/ContactForm";
 import { t } from "i18next";
@@ -52,6 +55,12 @@ const AboutUsPage = () => {
   // },[])
   return (
     <>
+    <Head>
+      <title>About Us | Albarkaat Overseas</title>
+      <meta name="description" content="Learn about Albarkaat Overseas — a trusted exporter of premium handmade rugs and carpets with a commitment to quality, fair pricing, and global delivery." />
+      <meta property="og:title" content="About Us | Albarkaat Overseas" />
+      <meta property="og:description" content="Discover the story behind Albarkaat Overseas and our passion for handcrafted rugs." />
+    </Head>
     <Box
       h={"100vh"}
       w={"100%"}
@@ -92,6 +101,109 @@ const AboutUsPage = () => {
         })
         }
     </Box>
+    {/* Factory Section */}
+    <Box w="100%" py="80px" px={{lg:"50px", md:"20px", sm:"10px", base:"10px"}} bgColor="gray.50">
+      <Text textAlign="center" fontSize={{base:"2xl", md:"3xl"}} fontWeight="semibold" letterSpacing={3} mb="50px">
+        From Our Factory
+      </Text>
+
+      <Grid
+        h="1400px"
+        w="100%"
+        templateRows="repeat(10, 1fr)"
+        templateColumns="repeat(5, 1fr)"
+        gap={{lg:"50px", md:"20px", sm:"10px", base:"10px"}}
+      >
+        {/* video 1 — colSpan 2 */}
+        <GridItem rowSpan={4} colSpan={2}>
+          <Box w="100%" h="100%" borderRadius="20px" overflow="hidden" boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px">
+            <video
+              ref={el => { if(el) el.playbackRate = 0.5 }}
+              src="/factory/factory-video-1.mp4"
+              autoPlay loop muted playsInline
+              style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}
+            />
+          </Box>
+        </GridItem>
+
+        {/* image 1 — colSpan 3 */}
+        <GridItem rowSpan={2} colSpan={3}>
+          <Box w="100%" h="100%" borderRadius="20px" overflow="hidden" boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px">
+            <img src="/factory/factory-image-1.png" alt="Factory 1" style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}/>
+          </Box>
+        </GridItem>
+
+        {/* image 2 — colSpan 3 */}
+        <GridItem rowSpan={2} colSpan={3}>
+          <Box w="100%" h="100%" borderRadius="20px" overflow="hidden" boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px">
+            <img src="/factory/factory-image-2.jpeg" alt="Factory 2" style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}/>
+          </Box>
+        </GridItem>
+
+        {/* video 2 — colSpan 2 */}
+        <GridItem rowSpan={4} colSpan={2}>
+          <Box w="100%" h="100%" borderRadius="20px" overflow="hidden" boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px">
+            <video
+              ref={el => { if(el) el.playbackRate = 0.5 }}
+              src="/factory/factory-video-2.mp4"
+              autoPlay loop muted playsInline
+              style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}
+            />
+          </Box>
+        </GridItem>
+
+        {/* video 3 — colSpan 3 */}
+        <GridItem rowSpan={4} colSpan={3}>
+          <Box w="100%" h="100%" borderRadius="20px" overflow="hidden" boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px">
+            <video
+              ref={el => { if(el) el.playbackRate = 0.5 }}
+              src="/factory/factory-video-3.mp4"
+              autoPlay loop muted playsInline
+              style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}
+            />
+          </Box>
+        </GridItem>
+
+        {/* PDF — full width */}
+        <GridItem rowSpan={2} colSpan={5}>
+          <Box
+            w="100%" h="100%"
+            borderRadius="20px"
+            boxShadow="rgba(99,99,99,0.2) 0px 2px 8px 0px"
+            bgGradient="linear(to-r, gray.800, gray.600)"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            px={{base:"20px", md:"50px"}}
+            gap={4}
+          >
+            <Flex alignItems="center" gap={4}>
+              <Text fontSize="40px">📄</Text>
+              <Box>
+                <Text color="white" fontWeight="semibold" fontSize={{base:"md", md:"xl"}}>Company Profile</Text>
+                <Text color="gray.300" fontSize="sm">Albarkaat Overseas — Full product catalogue & company overview</Text>
+              </Box>
+            </Flex>
+            <Box
+              as="a"
+              href="/factory/company-profile.pdf"
+              download
+              bg="white"
+              color="gray.800"
+              px={6} py={3}
+              borderRadius="10px"
+              fontWeight="semibold"
+              fontSize="sm"
+              whiteSpace="nowrap"
+              _hover={{ bg: "gray.100" }}
+            >
+              Download PDF
+            </Box>
+          </Box>
+        </GridItem>
+      </Grid>
+    </Box>
+
     <Box
      w={"100%"}
      display={'flex'}

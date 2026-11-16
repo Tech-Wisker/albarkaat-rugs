@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Heading, Text, Button, Image } from '@chakra-ui/react';
+import Head from 'next/head';
 import { Link }from 'next/link';
 
 
@@ -11,6 +12,10 @@ const NotFoundPage = () => {
       exit={{ opacity: 0, translateY: -20 }}
       transition={{ duration: 0.5 }}
     >
+      <Head>
+        <title>Page Not Found | Albarkaat Overseas</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <Box textAlign="center" mt="70px">
         <Image src={'/images/not_found.avif'} alt="Creative 404" maxW="400px" mx="auto" mb="4" />
 

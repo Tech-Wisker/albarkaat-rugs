@@ -18,8 +18,8 @@ function Footer() {
         <Box>
          <Text fontSize="30px">{t("contactus.title")}</Text>
         <Flex justifyContent="space-evenly">
-        <a target="_blank" rel="noreferrer"  href='https://www.instagram.com/rugs_mart_/'><AiFillInstagram className='hover_icon' size="40px"/></a>
-           <a target="_blank" rel='noreferrer' href='mailto:mytraders.rugs@gmail.com?subject=Info%20About'><AiFillMail className='hover_icon' size="40px"/></a>
+        <a target="_blank" rel="noreferrer"  href='https://www.instagram.com/abt_overseas/'><AiFillInstagram className='hover_icon' size="40px"/></a>
+           <a target="_blank" rel='noreferrer' href='mailto:albarkaatoverseas@gmail.com?subject=Info%20About'><AiFillMail className='hover_icon' size="40px"/></a>
            <a target="_blank" rel='noreferrer' href='https://wa.link/6b8v5c'><IoLogoWhatsapp className='hover_icon' size="40px"/></a>
         </Flex>
         </Box>

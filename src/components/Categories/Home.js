@@ -1,15 +1,16 @@
 import Category from '@/components/Categories/Category';
-import { Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Breadcrumbs from '../Heading';
 
 const TypesHome = () => {
     const {t} = useTranslation();
     return (<>
-        <Heading textAlign={"center"} mt="100px">{t("categories.heading")}</Heading>
+        <Box mt="100px" />
+        <Breadcrumbs crumbs={[{ label: t('categories.heading') }]} />
         <Category/>
-           </>
-    );
+    </>);
 }
 
 export default TypesHome;

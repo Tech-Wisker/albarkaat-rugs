@@ -1,4 +1,4 @@
-import { Box, Button, Input, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Input } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import {
     Drawer,
@@ -819,11 +819,10 @@ const initLanguageContent = [
   }
 ]
 
-const LanguageSwitch = () => {
+const LanguageSwitch = ({ isOpen, onOpen, onClose }) => {
     const [languageContent , setLanguageContent] = useState(initLanguageContent);
   const { i18n } = useTranslation();
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     const router = useRouter();
       const [selectedLanguage, setSelectedLanguage] = useState(languageContent[0]);
@@ -869,10 +868,6 @@ const LanguageSwitch = () => {
       }
 
     return (<>
-    
-        <Button colorScheme="cyan" variant={"outline"} bg="white" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" w={"70px"} h={"70px"} borderRadius={"50%"} pos={"fixed"} zIndex={10} right={4} bottom={4} ref={btnRef} textTransform={"uppercase"} onClick={onOpen}>
-        {selectedLanguage.code || "lang"}
-      </Button>
       <Drawer
         isOpen={isOpen}
         placement='right'

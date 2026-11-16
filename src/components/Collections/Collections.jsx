@@ -26,9 +26,19 @@ const Collections = () => {
       
     }, [])
     if(categories.length === 0 && loading){
-        return <Skeleton>
-          <Box w={"100%"} h={"100vh"}></Box>
-        </Skeleton>
+        return (
+            <Grid
+              p={{lg:'50px',md:'20px',sm:'10px',base:'10px'}}
+              h='700px' w='100%'
+              templateRows='repeat(4, 1fr)'
+              templateColumns='repeat(5, 1fr)'
+              gap={{lg:'50px',md:'20px',sm:'10px',base:'10px'}}
+            >
+                <GridItem rowSpan={4} colSpan={2}><Skeleton w='100%' h='100%' borderRadius='20px'/></GridItem>
+                <GridItem rowSpan={2} colSpan={3}><Skeleton w='100%' h='100%' borderRadius='20px'/></GridItem>
+                <GridItem rowSpan={2} colSpan={3}><Skeleton w='100%' h='100%' borderRadius='20px'/></GridItem>
+            </Grid>
+        )
     }
     return (<>
         <Grid

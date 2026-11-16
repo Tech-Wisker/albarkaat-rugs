@@ -1,7 +1,7 @@
 "use client"
 import Translate from '@/components/Common/Translate';
-import { Box, Center, Grid, GridItem, Skeleton, Text } from '@chakra-ui/react';
-import Heading from '../Heading';
+import { Box, Grid, GridItem, Skeleton, Text } from '@chakra-ui/react';
+import Breadcrumbs from '../Heading';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -61,9 +61,17 @@ const CategoryById = ({id}) => {
     }, [])
     console.log("IDDATA",data);
     if(loading){
-        return <Skeleton>
-         <Box h={"70vh"} width={"100%"}></Box>
-        </Skeleton>
+        return (
+            <>
+                <Skeleton w='100%' h='90vh'/>
+                <Box px={{base:'20px',md:'50px'}} py={3}><Skeleton h='16px' w='250px' borderRadius='full'/></Box>
+                <Grid mt='50px' p='50px' w='100%' templateColumns={{lg:'repeat(4,1fr)',md:'repeat(3,1fr)',sm:'repeat(2,1fr)',base:'repeat(1,1fr)'}} gap={6}>
+                    {Array(8).fill('').map((_,i) => (
+                        <Box key={i}><Skeleton h='220px' borderRadius='12px' mb={3}/><Skeleton h='16px' w='80%' mb={2}/><Skeleton h='12px' w='50%'/></Box>
+                    ))}
+                </Grid>
+            </>
+        )
     }
    
     return (<>
@@ -87,12 +95,13 @@ const CategoryById = ({id}) => {
     right={0}
     color={"white"}
     >
-        <Box px="30px">
-    <Heading textAlign={"center"}>{data.title}</Heading>
-    <Text textAlign={"center"}>{data.description}</Text>
+        <Box px="30px" textAlign="center">
+    <Text fontSize="3xl" fontWeight="bold" color="white">{data.title}</Text>
+    <Text color="white">{data.description}</Text>
         </Box>
     </Box>
     </Box>
+    <Breadcrumbs crumbs={[{ label: t('categories.heading'), href: '/types' }, { label: data.title }]} />
      <Grid 
      mt={"50px"}
      p={"50px"}

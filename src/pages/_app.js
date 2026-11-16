@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import "@/styles/globals.css";
 import { Box, ChakraProvider } from "@chakra-ui/react";
-import LanguageSwitch from "@/components/Language/LanguageSwitch";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import i18n from "../i18/i18n";
 import { useEffect } from "react";
@@ -23,7 +22,6 @@ function App({ Component, pageProps }) {
   <Component {...pageProps} />
   <Footer/>
     </Box>
-    <LanguageSwitch/>
   </ChakraProvider>
    </I18nextProvider>
   </>;
