@@ -11,7 +11,8 @@ function Footer() {
 
     <Flex w="100%"
     py={{lg:"0px" , md:"0px" , sm:"0px" , base: "25px"}}
-    boxShadow="rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset"
+    // border={"2px solid green"}
+    boxShadow="rgba(0, 0, 0, 0.06) 0px 2px 0px 0px inset"
     px="50px"
     alignItems={"center"}
     justifyContent={{lg:"space-between" , md:"space-between" , sm:"space-between" , base: 'center'}}>
@@ -36,13 +37,13 @@ function Footer() {
         p={{lg:'10px' , md:"10px" , sm:'10px' , base: '0'}}
          >
             <Image src="/images/logo.png" alt="MY Traders" />
-            <Text fontSize={"x-large"}>AL-BARKAAT RUGS</Text>
+            <Text fontSize={"x-large"}>AL-BARKAAT OVERSEAS</Text>
             <Text fontSize="9px">Unveil the Essence of Opulence in Every Fiber</Text>
            
         </Flex>
     </Flex>
     <Box padding="0.2px" bg="black" width="100%"/>
-    <Center>© Al-Barkaat Rugs</Center>
+    <Center>© Al-Barkaat Overseas</Center>
     <Center> {t("developerSign")}<span> </span><a target='blank' style={{color : "blue"}} href='https://www.techwisker.com'>Tech Wisker</a> </Center>
             </Box>
   )
